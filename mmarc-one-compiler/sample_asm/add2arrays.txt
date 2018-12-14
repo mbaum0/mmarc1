@@ -1,0 +1,62 @@
+# adds two n-element arrays and stores them into a third sum array
+# predefined equates:
+# num_elements 0x0
+# arr_x_ptr 0x100
+# arr_y_ptr 0x200
+# arr_s_ptr 0x300
+# tempvar   0x400
+# endloop   33 (0x21)
+
+# Accumulator <- 0
+MOVI 0x00
+# Accumulator <- MEM[accumulator + num_elements]
+LAAD 0x00
+# Branch if num_elements is 0
+BIZI 0x1e
+
+# accumulator <- value at MEM[MEM[arr_x_ptr]]
+MOVI 0x00
+LAAD 0x0100
+LAAD 0x00
+STOR 0x0400
+
+# load value from y_ptr and add temp to it
+MOVI 0x00
+LAAD 0x0200
+LAAD 0x00
+ADDA 0x0400
+
+# store result into temp and add to sum array
+STOR 0x0400
+MOVI 0x00
+LAAD 0x0300
+SAAD 0x0400
+
+# increment x_ptr by 2
+MOVI 0x00
+LAAD 0x0100
+ADDI 0x01
+STOR 0x0100
+
+# increment y_ptr by 2
+MOVI 0x00
+LAAD 0x0200
+ADDI 0x01
+STOR 0x0200
+
+# increment sum_ptr by 2
+MOVI 0x00
+LAAD 0x0300
+ADDI 0x01
+STOR 0x0300
+
+# decrement num elements by 1
+MOVI 0x00
+LAAD 0x00
+ADDI -0x01
+STOR 0x00
+
+# loop back
+MOVI 0x00
+BIZI -0x21
+BIZI -0x01
