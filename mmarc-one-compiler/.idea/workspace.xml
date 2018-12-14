@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="01d490a3-bc77-4ac4-a6f1-ef9125b20b3c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/mmarc-one-compiler.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/mmarc-one-compiler.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample_asm/accumulate.mmarc1" beforeDir="false" afterPath="$PROJECT_DIR$/sample/accumulate.mmarc1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample_asm/accumulate.txt" beforeDir="false" afterPath="$PROJECT_DIR$/sample/accumulate.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample_asm/add2arrays.mmarc1" beforeDir="false" afterPath="$PROJECT_DIR$/sample/add2arrays.mmarc1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample_asm/add2arrays.txt" beforeDir="false" afterPath="$PROJECT_DIR$/sample/add2arrays.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample_asm/compile.py" beforeDir="false" afterPath="$PROJECT_DIR$/compile.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample_asm/initmem.mmarc1" beforeDir="false" afterPath="$PROJECT_DIR$/sample/initmem.mmarc1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample_asm/initmem.txt" beforeDir="false" afterPath="$PROJECT_DIR$/sample/initmem.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Logisim/mmarc-one-logic-array.circ" beforeDir="false" afterPath="$PROJECT_DIR$/../Logisim/mmarc-one-logic-array.circ" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -36,20 +27,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sample/add2arrays.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-117">
+            <state relative-caret-position="493">
               <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sample/add2arrays.mmarc1">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="35" selection-end-column="170" />
+              <caret column="60" selection-start-column="60" selection-end-column="60" />
             </state>
           </provider>
         </entry>
@@ -177,24 +168,24 @@
       <option name="presentableId" value="Default" />
       <updated>1544739502554</updated>
       <workItem from="1544739522772" duration="17564000" />
-      <workItem from="1544778208499" duration="1955000" />
+      <workItem from="1544778208499" duration="2696000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19519000" />
+    <option name="totallyTimeSpent" value="20260000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18017058" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18017058" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3109426" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.3997833" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3109426" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -285,17 +276,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sample/add2arrays.mmarc1">
+    <entry file="file://$PROJECT_DIR$/sample/add2arrays.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="35" selection-end-column="170" />
+        <state relative-caret-position="493">
+          <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sample/add2arrays.txt">
+    <entry file="file://$PROJECT_DIR$/sample/add2arrays.mmarc1">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-117">
-          <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
+        <state>
+          <caret column="60" selection-start-column="60" selection-end-column="60" />
         </state>
       </provider>
     </entry>
