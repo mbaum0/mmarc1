@@ -79,6 +79,12 @@ STOR STACKTEMP        # MEM[STACKTEMP] <- Accumulator
 MOVI STACKPOINTER     # Accumulator <- STACKPOINTER
 SAAD STACKTEMP        # MEM[Accumulator] <- MEM[STACKTEMP]
 
+# Decrement STACKCOUNT
+MOVI 0x0
+LAAD STACKCOUNT
+ADDI -0x1
+STOR STACKCOUNT
+
 # Return to the calling instruction
 BRAM RETURNPOINTER
 
@@ -87,24 +93,48 @@ BRAM RETURNPOINTER
 #*************************************************************************
 @LABEL MAINLOOP
 
+MOVI 0x0F         # Accumulator gets loop variable
+STOR TEMP1        # Store loop variable
 
+@LABEL PUSHLOOP
+# Load counter value
 MOVI 0x0
+LAAD TEMP1
+
+# Branch if counter value is zero
+BIZI POPLOOP
+
+# Store counter value at stack item pointer
 STOR STACKITEMPOINTER
 
-@LABEL SUBLOOP
+# call PUSH_STACK subroutine
 MOVI PUSHITEM
 STOR RETURNPOINTER
 MOVI 0x0
 BIZI PUSH_STACK
 @LABEL PUSHITEM
 
+# increment the counter variable
 MOVI 0x0
-LAAD STACKITEMPOINTER
-ADDI 0x1
+LAAD TEMP1
+ADDI 0x01
 STOR STACKITEMPOINTER
+STOR TEMP1
+
+# loop back around
+MOVI 0x0
+BIZI PUSHLOOP
+
+
+@LABEL POPLOOP
+MOVI POPITEM
+STOR RETURNPOINTER
+MOVI 0x0
+BIZI POP_STACK
+@LABEL POPITEM
 
 MOVI 0x0
-BIZI SUBLOOP
+BIZI POPLOOP
 
 
 #*************************************************************************
