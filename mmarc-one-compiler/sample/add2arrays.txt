@@ -1,18 +1,19 @@
 # adds two n-element arrays and stores them into a third sum array
 # endloop   33 (0x21)
 
-#EQUATE num_elem  0x0
-#EQUATE arr_x_ptr 0x1
-#EQUATE arr_y_ptr 0x02
-#EQUATE arr_s_ptr 0x03
-#EQUATE temp_var 0x04
+@EQUATE num_elem  0x0
+@EQUATE arr_x_ptr 0x1
+@EQUATE arr_y_ptr 0x02
+@EQUATE arr_s_ptr 0x03
+@EQUATE temp_var 0x04
 
 # Accumulator <- 0
+@LABEL START
 MOVI 0x00
 # Accumulator <- MEM[accumulator + num_elements]
 LAAD num_elem
 # Branch if num_elements is 0
-BIZI 0x1e
+BIZI END
 
 # accumulator <- value at MEM[MEM[arr_x_ptr]]
 MOVI 0x00
@@ -58,5 +59,6 @@ STOR 0x00
 
 # loop back
 MOVI 0x00
-BIZI -0x21
+BIZI START
+@LABEL END
 BIZI -0x01

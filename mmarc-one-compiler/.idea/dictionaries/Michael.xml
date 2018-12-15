@@ -1,11 +1,20 @@
 <component name="ProjectDictionaryState">
   <dictionary name="Michael">
     <words>
+      <w>baumgarten</w>
       <w>bizi</w>
       <w>laad</w>
       <w>movi</w>
       <w>opcode</w>
+      <w>returnpointer</w>
       <w>saad</w>
+      <w>stackcount</w>
+      <w>stackheadpointer</w>
+      <w>stackitem</w>
+      <w>stackitempointer</w>
+      <w>stackpointer</w>
+      <w>stackpointeraddress</w>
+      <w>stacksize</w>
       <w>stor</w>
       <w>suba</w>
     </words>

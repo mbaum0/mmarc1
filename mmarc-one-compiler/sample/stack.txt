@@ -1,0 +1,71 @@
+#
+# File: stack.txt
+# Author: Michael Baumgarten
+#
+# Implements a stack data structure
+#
+
+@EQUATE STACKPOINTER         0x00   # Pointer to pointer to the top of the stack
+@EQUATE STACKSIZE            0xFF   # Maximum size of the stack
+@EQUATE STACKITEMPOINTER     0x01   # Store value here to be pushed to the stack, item is placed here when popping
+@EQUATE STACKCOUNT           0x02   # Number of elements currently in the stack
+@EQUATE TEMP0                0x03   # Temporary data slot 0
+@EQUATE TEMP1                0x04   # Temporary data slot 1
+@EQUATE TEMP2                0x05   # Temporary data slot 2
+@EQUATE TEMP3                0x06   # Temporary data slot 3
+@EQUATE TEMP4                0x07   # Temporary data slot 4
+@EQUATE RETURNPOINTER        0x08   # Pointer to return memory address after subroutine completes
+@EQUATE STACKHEADPOINTER     0x10   # The head of the stack
+
+#*************************************************************************
+# Initializes the stack
+#*************************************************************************
+@LABEL INIT_STACK
+MOVI STACKHEADPOINTER  # Accumulator <- STACKHEADPOINTER
+STOR STACKPOINTER      # MEM[STACKPOINTER] <- Accumulator
+MOVI 0x0               # Accumulator <- 0x0
+STOR STACKCOUNT        # MEM[STACKCOUNT] <- Accumulator
+BIZI MAINLOOP          # Branch to main loop
+
+#*************************************************************************
+# Pushes an element onto the stack
+#*************************************************************************
+@LABEL PUSH_STACK
+
+# If stack is full, go to error
+MOVI STACKSIZE
+SUBA STACKCOUNT
+BIZI ERROR
+
+# Increment stack pointer and push an item onto it
+MOVI 0x00              # Accumulator <- 0x0
+LAAD STACKHEADPOINTER  # Accumulator <- MEM[STACKHEADPOINTER]
+ADDI 0x01              # Accumulator <- Accumulator + 1
+STOR STACKHEADPOINTER  # MEM[STACKHEADPOINTER] <- Accumulator
+SAAD STACKITEMPOINTER  # MEM[Accumulator] <- MEM[STACKITEMPOINTER]
+
+#
+
+
+
+#*************************************************************************
+# Pops an element from the stack
+#*************************************************************************
+@LABEL POP_STACK
+
+# If stack is empty, go to error
+MOVI STACKSIZE
+SUBA 0x0
+BIZI ERROR
+
+# Pop item from stack and decrement stack pointer
+MOVI 0x0
+LAAD STACKPOINTER
+
+
+# Main program loop
+@LABEL MAINLOOP
+
+# Infinite loop here if error occurred
+@LABEL ERROR
+BIZI -0x01

@@ -7,7 +7,7 @@ instruction_dictionary = {
     "STOR": "0b010",
     "SUBA": "0b011",
     "ADDI": "0b100",
-    "ADDA": "0b101",
+    "BRAM": "0b101",
     "MOVI": "0b110",
     "LAAD": "0b111"
 }
@@ -16,23 +16,55 @@ instruction_dictionary = {
 def preprocess(lines):
     processed_lines = []
     equate_dict = {}
+    label_dict = {}
+
+    # extract equates into dictionary
+    no_equates = []
     for line in lines:
         if len(line) > 0:
-            if line[0] in ["#", "\n"]:
-                if "#EQUATE" in line:
+            if line[0] in ["#", "\n", "@"]:
+                if "@EQUATE" in line:
                     parts = line.split()
                     key = parts[1]
                     value = parts[2]
                     equate_dict[key] = value
+                if "@LABEL" in line:
+                    no_equates.append(line)
             else:
-                processed_lines.append(line)
+                no_equates.append(line)
 
-    for i in range(0, len(processed_lines)):
-        line = processed_lines[i]
+    # remove newline characters
+    for i in range(0, len(no_equates)):
+        no_equates[i] = no_equates[i].replace("\n", "")
+
+    # replace equates with values
+    replace_equates = []
+    for i in range(0, len(no_equates)):
+        line = no_equates[i]
+        replace_equates.append(line)
         items = line.split()
         if items[1] in equate_dict.keys():
             items[1] = equate_dict[items[1]]
-            processed_lines[i] = items[0] + " " + items[1]
+            replace_equates[i] = items[0] + " " + items[1]
+
+    # extract labels into dictionary
+    no_labels = []
+    for i in range(0, len(replace_equates)):
+        line = replace_equates[i]
+        items = line.split()
+        if items[0] == "@LABEL":
+            label_dict[items[1]] = i - len(label_dict.keys())
+        else:
+            no_labels.append(line)
+
+    for i in range(0, len(no_labels)):
+        line = no_labels[i]
+        items = line.split()
+        if items[1] in label_dict.keys():
+            items[1] = hex(label_dict[items[1]] - i - 1)
+            processed_lines.append(items[0] + " " + items[1])
+        else:
+            processed_lines.append(no_labels[i])
 
     return processed_lines
 
@@ -59,6 +91,7 @@ def make_binary(lines):
 
 def main():
     in_filename = input("Enter a file name: ")
+    #in_filename = "sample/add2arrays.txt"
     input_file = open(in_filename, "r")
 
     out_filename = in_filename.replace(".txt", ".mmarc1")
