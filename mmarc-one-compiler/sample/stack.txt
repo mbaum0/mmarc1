@@ -9,13 +9,14 @@
 @EQUATE STACKSIZE            0xFF   # Maximum size of the stack
 @EQUATE STACKITEMPOINTER     0x01   # Store value here to be pushed to the stack, item is placed here when popping
 @EQUATE STACKCOUNT           0x02   # Number of elements currently in the stack
-@EQUATE TEMP0                0x03   # Temporary data slot 0
-@EQUATE TEMP1                0x04   # Temporary data slot 1
-@EQUATE TEMP2                0x05   # Temporary data slot 2
-@EQUATE TEMP3                0x06   # Temporary data slot 3
-@EQUATE TEMP4                0x07   # Temporary data slot 4
-@EQUATE RETURNPOINTER        0x08   # Pointer to return memory address after subroutine completes
-@EQUATE STACKHEADPOINTER     0x10   # The head of the stack
+@EQUATE STACKTEMP            0x03   # RESERVED Temporary data holding slot for the stack
+@EQUATE TEMP0                0x04   # Temporary data slot 0
+@EQUATE TEMP1                0x05   # Temporary data slot 1
+@EQUATE TEMP2                0x06   # Temporary data slot 2
+@EQUATE TEMP3                0x07   # Temporary data slot 3
+@EQUATE TEMP4                0x08   # Temporary data slot 4
+@EQUATE RETURNPOINTER        0x09   # Pointer to return memory address after subroutine completes
+@EQUATE STACKHEADPOINTER     0x1F   # The head of the stack
 
 #*************************************************************************
 # Initializes the stack
@@ -34,19 +35,25 @@ BIZI MAINLOOP          # Branch to main loop
 
 # If stack is full, go to error
 MOVI STACKSIZE
+
 SUBA STACKCOUNT
 BIZI ERROR
 
 # Increment stack pointer and push an item onto it
 MOVI 0x00              # Accumulator <- 0x0
-LAAD STACKHEADPOINTER  # Accumulator <- MEM[STACKHEADPOINTER]
+LAAD STACKPOINTER      # Accumulator <- MEM[STACKPOINTER]
 ADDI 0x01              # Accumulator <- Accumulator + 1
-STOR STACKHEADPOINTER  # MEM[STACKHEADPOINTER] <- Accumulator
+STOR STACKPOINTER      # MEM[STACKPOINTER] <- Accumulator
 SAAD STACKITEMPOINTER  # MEM[Accumulator] <- MEM[STACKITEMPOINTER]
 
-#
+# Increment STACKCOUNT
+MOVI 0x0
+LAAD STACKCOUNT
+ADDI 0x1
+STOR STACKCOUNT
 
-
+# Return to the calling instruction
+BRAM RETURNPOINTER
 
 #*************************************************************************
 # Pops an element from the stack
@@ -58,14 +65,50 @@ MOVI STACKSIZE
 SUBA 0x0
 BIZI ERROR
 
-# Pop item from stack and decrement stack pointer
-MOVI 0x0
-LAAD STACKPOINTER
+# Pop item from stack
+MOVI 0x0              # Accumulator <- 0x0
+LAAD STACKPOINTER     # Accumulator <- MEM[STACKPOINTER]
+LAAD 0x0              # Accumulator <- MEM[Accumulator]
+STOR STACKITEMPOINTER # MEM[STACKITEMPOINTER] <- Accumulator
 
+#  Decrement stack pointer
+MOVI 0x0              # Accumulator <- 0x0
+LAAD STACKPOINTER     # Accumulator <- MEM[STACKPOINTER]
+ADDI -0x1             # Accumulator <- Accumulator - 1
+STOR STACKTEMP        # MEM[STACKTEMP] <- Accumulator
+MOVI STACKPOINTER     # Accumulator <- STACKPOINTER
+SAAD STACKTEMP        # MEM[Accumulator] <- MEM[STACKTEMP]
 
+# Return to the calling instruction
+BRAM RETURNPOINTER
+
+#*************************************************************************
 # Main program loop
+#*************************************************************************
 @LABEL MAINLOOP
 
-# Infinite loop here if error occurred
+
+MOVI 0x0
+STOR STACKITEMPOINTER
+
+@LABEL SUBLOOP
+MOVI PUSHITEM
+STOR RETURNPOINTER
+MOVI 0x0
+BIZI PUSH_STACK
+@LABEL PUSHITEM
+
+MOVI 0x0
+LAAD STACKITEMPOINTER
+ADDI 0x1
+STOR STACKITEMPOINTER
+
+MOVI 0x0
+BIZI SUBLOOP
+
+
+#*************************************************************************
+# ERROR: Infinite loop here if error occurred
+#*************************************************************************
 @LABEL ERROR
 BIZI -0x01

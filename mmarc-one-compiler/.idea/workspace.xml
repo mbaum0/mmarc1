@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="01d490a3-bc77-4ac4-a6f1-ef9125b20b3c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/sample/addatest.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sample/stack.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Logisim/mmarc-one-logic-array.circ" beforeDir="false" afterPath="$PROJECT_DIR$/../Logisim/mmarc-one-logic-array.circ" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Michael.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/Michael.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/compile.py" beforeDir="false" afterPath="$PROJECT_DIR$/compile.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample/add2arrays.txt" beforeDir="false" afterPath="$PROJECT_DIR$/sample/add2arrays.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sample/stack.txt" beforeDir="false" afterPath="$PROJECT_DIR$/sample/stack.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,15 +14,15 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/mmarc_one_compiler$compile.coverage" NAME="compile Coverage Results" MODIFIED="1544852473497" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/mmarc_one_compiler$compile.coverage" NAME="compile Coverage Results" MODIFIED="1544857826763" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/compile.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="89" lean-forward="true" selection-start-line="89" selection-end-line="89" />
+            <state relative-caret-position="41">
+              <caret line="71" selection-start-line="71" selection-end-line="71" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -33,47 +30,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sample/stack.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="24" column="20" lean-forward="true" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/sample/addatest.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="9" lean-forward="true" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
+            <state relative-caret-position="646">
+              <caret line="50" column="15" selection-start-line="50" selection-start-column="15" selection-end-line="50" selection-end-column="15" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sample/addatest.mmarc1">
+        <entry file="file://$PROJECT_DIR$/sample/stack.mmarc1">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret selection-end-column="60" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sample/add2arrays.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="7" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sample/add2arrays.mmarc1">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="22" lean-forward="true" selection-end-column="170" />
+              <caret column="35" selection-end-column="205" />
             </state>
           </provider>
         </entry>
@@ -107,10 +77,10 @@
         <option value="$PROJECT_DIR$/sample_asm/add2arrays.txt" />
         <option value="$PROJECT_DIR$/sample/add2arrays.txt" />
         <option value="$PROJECT_DIR$/sample/add2arrays.mmarc1" />
-        <option value="$PROJECT_DIR$/sample/stack.txt" />
         <option value="$PROJECT_DIR$/sample/addatest.mmarc1" />
         <option value="$PROJECT_DIR$/sample/addatest.txt" />
         <option value="$PROJECT_DIR$/compile.py" />
+        <option value="$PROJECT_DIR$/sample/stack.txt" />
       </list>
     </option>
   </component>
@@ -205,24 +175,24 @@
       <option name="presentableId" value="Default" />
       <updated>1544739502554</updated>
       <workItem from="1544739522772" duration="17564000" />
-      <workItem from="1544778208499" duration="13545000" />
+      <workItem from="1544778208499" duration="18224000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31109000" />
+    <option name="totallyTimeSpent" value="35788000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18017058" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18017058" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3109426" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3726977" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.18093175" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.56988084" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -247,8 +217,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/compile.py</url>
-          <line>68</line>
-          <option name="timeStamp" value="40" />
+          <line>71</line>
+          <option name="timeStamp" value="48" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -259,6 +229,11 @@
         </breakpoint>
       </default-breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="processed_lines" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://C:/Program Files (x86)/Python37-32/Lib/urllib/parse.py">
@@ -317,34 +292,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sample/add2arrays.mmarc1">
+    <entry file="file://$PROJECT_DIR$/sample/addatest.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="22" lean-forward="true" selection-end-column="170" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sample/add2arrays.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="7" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sample/stack.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="24" column="20" lean-forward="true" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/compile.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="89" lean-forward="true" selection-start-line="89" selection-end-line="89" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="306">
+          <caret line="18" column="9" lean-forward="true" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -355,10 +306,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sample/addatest.txt">
+    <entry file="file://$PROJECT_DIR$/sample/add2arrays.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="9" lean-forward="true" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
+        <state relative-caret-position="-442">
+          <caret selection-end-line="7" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sample/add2arrays.mmarc1">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="22" lean-forward="true" selection-end-column="170" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sample/stack.mmarc1">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="35" selection-end-column="205" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/compile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="41">
+          <caret line="71" selection-start-line="71" selection-end-line="71" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sample/stack.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="50" column="15" selection-start-line="50" selection-start-column="15" selection-end-line="50" selection-end-column="15" />
         </state>
       </provider>
     </entry>

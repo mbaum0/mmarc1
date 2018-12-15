@@ -61,7 +61,10 @@ def preprocess(lines):
         line = no_labels[i]
         items = line.split()
         if items[1] in label_dict.keys():
-            items[1] = hex(label_dict[items[1]] - i - 1)
+            if items[0] == "MOVI":
+                items[1] = hex(label_dict[items[1]])
+            else:
+                items[1] = hex(label_dict[items[1]] - i - 1)
             processed_lines.append(items[0] + " " + items[1])
         else:
             processed_lines.append(no_labels[i])
@@ -90,8 +93,8 @@ def make_binary(lines):
 
 
 def main():
-    in_filename = input("Enter a file name: ")
-    #in_filename = "sample/add2arrays.txt"
+    #in_filename = input("Enter a file name: ")
+    in_filename = "sample/stack.txt"
     input_file = open(in_filename, "r")
 
     out_filename = in_filename.replace(".txt", ".mmarc1")

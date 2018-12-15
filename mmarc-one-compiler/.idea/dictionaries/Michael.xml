@@ -6,6 +6,7 @@
       <w>laad</w>
       <w>movi</w>
       <w>opcode</w>
+      <w>progend</w>
       <w>returnpointer</w>
       <w>saad</w>
       <w>stackcount</w>
@@ -15,6 +16,7 @@
       <w>stackpointer</w>
       <w>stackpointeraddress</w>
       <w>stacksize</w>
+      <w>stacktemp</w>
       <w>stor</w>
       <w>suba</w>
     </words>
